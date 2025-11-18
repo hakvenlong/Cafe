@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+section{
+    margin-bottom: 30px
+;
+}
+
+.testimonial-section {
+    padding: 80px 0;
+    background: linear-gradient(rgba(248, 245, 242, 0.95), rgba(248, 245, 242, 0.95)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&q=80') center/cover no-repeat;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.stars {
+    color: #ffa726;
+}
+
+.quote-icon {
+    font-size: 50px;
+    /* color: #d4a373; */
+    opacity: 0.3;
+}
+
+.client-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}

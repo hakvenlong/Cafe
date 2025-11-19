@@ -9,17 +9,16 @@ function Header() {
         <div className="d-flex flex-wrap align-items-center justify-content-between justify-content-lg-start">
 
           {/* Logo */}
-          <a href="#" className="me-3 fs-4 text-black">
+          <Link to="/" className="me-3 fs-4 text-black">
             <GrCafeteria />
-          </a>
+          </Link>
 
           {/* Navigation */}
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0 m-auto">
             <li><Link to="/" className="nav-link px-2 text-black">Home</Link></li>
-            <li><Link to="/features" className="nav-link px-2 text-black">Features</Link></li>
-            <li><Link to="/pricing" className="nav-link px-2 text-black">Pricing</Link></li>
-            <li><Link to="/faqs" className="nav-link px-2 text-black">FAQs</Link></li>
-            <li><Link to="/about" className="nav-link px-2 text-black">About</Link></li>
+            <li><Link to="/listings" className="nav-link px-2 text-black">Listings</Link></li>
+            <li><Link to="/products" className="nav-link px-2 text-black">Products</Link></li>
+            <li><Link to="/checkout" className="nav-link px-2 text-black">Check out</Link></li>
           </ul>
 
 

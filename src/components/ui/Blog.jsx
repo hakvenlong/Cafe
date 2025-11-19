@@ -1,82 +1,90 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { usePlaceholder } from '../../hooks/usePlaceholder';
 import blogImage from '../../assets/images/blog.png';
+import wave from '../../assets/images/waves.svg'
+import wave2 from '../../assets/images/waves3.svg'
 
 const Blog = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  const loaded = usePlaceholder();
 
   return (
-    <section>
-      <div className="container-fluid ">
-        <div className="row align-items-center placeholder-glow">
+    <>
+      <img src={wave2} alt="" style={{
+        transform: 'rotate(180deg)',
+        transformOrigin: 'center',
+        display: 'block',
+        width: "100%",
+      }} />
+      <section style={{ backgroundColor: '#caf0f8' }}>
+        <div className="container-fluid">
+          <div className="row align-items-center justify-content-between min-vh-100 py-5 py-lg-0">
 
-          {/* Image Side */}
-          <div className="col-lg-6 p-5">
-            {!loaded ? (
-              <div className="placeholder shadow-sm w-100" style={{ height: "550px", borderRadius: "10px" }}></div>
-            ) : (
-              <img
-                src={blogImage}
-                className="w-100"
-                style={{ height: "550px", objectFit: "cover", borderRadius: "10px" }}
-                alt="Cafe blog post"
-              />
-            )}
-          </div>
+            {/* Image Side */}
+            <div className="col-lg-6 p-5">
+              {!loaded ? (
+                <div
+                  className="placeholder shadow-sm w-100 rounded-3"
+                  style={{ height: "60vh" }}
+                  aria-hidden="true"
+                >
+                  <div className="placeholder-glow w-100 h-100 rounded-3"></div>
+                </div>
+              ) : (
+                <img
+                  src={blogImage}
+                  className="w-100 rounded-3 shadow-sm"
+                  style={{ height: "60vh", objectFit: "cover" }}
+                  alt="Cafe blog post"
+                />
+              )}
+            </div>
 
+            {/* Content Side — Perfectly Centered */}
+            <div className="col-lg-6 p-5 d-flex align-items-center justify-content-center">
+              <div className="p-5 p-md-6 bg-coffee-cream text-coffee-brown rounded-3" style={{ maxWidth: '600px' }}>
 
+                <div className={`small text-uppercase fw-bold text-coffee mb-3 ${!loaded ? 'placeholder-glow' : ''}`}>
+                  <span className={!loaded ? 'placeholder col-5' : ''}>Cafe Stories</span>
+                </div>
 
-          {/* Content Side */}
-          <div className="col-lg-6">
-            <div className="h-100 p-5 p-md-6 bg-coffee-cream text-coffee-brown">
-              <div className="small text-uppercase fw-bold text-coffee mb-3 tracking-wider">
-                <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                  Cafe Stories
-                </span>
-              </div>
-
-              <h3 className="display-5 fw-bold mb-4">
-                <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                  A Family Tradition of Rich, Aromatic Coffee.
-                </span>
-              </h3>
-
-              <p className="lead mb-4">
-                <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                  Coffee has the power to connect generations – whether it's learning grandma's brewing techniques and trying to perfect them just like her or the intense memories triggered by the rich flavors and aromas of our favorite coffee blends.
-                </span>
-              </p>
-
-              <div className="mb-4">
-                <small className="text-muted">
-                  <i className="bi bi-calendar me-2"></i>
-                  <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                    November 15, 2025
+                <h1 className={`display-5 fw-bold mb-4 ${!loaded ? 'placeholder-glow' : ''}`}>
+                  <span className={!loaded ? 'placeholder col-11' : ''}>
+                    A Family Tradition of Rich, Aromatic Coffee.
                   </span>
-                </small>
-                <span className="mx-3 text-muted">•</span>
-                <small className="text-muted">
-                  <i className="bi bi-clock me-2"></i>
-                  <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                    4 min read
-                  </span>
-                </small>
-              </div>
+                </h1>
 
-              <button className="btn ">
-                <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                  Read the Story
-                </span>
-              </button>
+                <p className={`lead mb-4 ${!loaded ? 'placeholder-glow' : ''}`}>
+                  <span className={!loaded ? 'placeholder col-12' : ''}></span>
+                  <span className={!loaded ? 'placeholder col-11' : ''}></span>
+                  <span className={!loaded ? 'placeholder col-10' : ''}></span>
+                  {!loaded ? null : (
+                    <>Coffee has the power to connect generations – whether it's learning grandma's brewing techniques and trying to perfect them just like her or the intense memories triggered by the rich flavors and aromas of our favorite coffee blends.</>
+                  )}
+                </p>
+
+                <div className="mb-4 d-flex gap-3 flex-wrap">
+                  <small className="text-muted d-flex align-items-center">
+                    <i className="bi bi-calendar3 me-2"></i>
+                    <span className={!loaded ? 'placeholder col-6' : ''}>November 15, 2025</span>
+                  </small>
+                  <span className="text-muted">•</span>
+                  <small className="text-muted d-flex align-items-center">
+                    <i className="bi bi-clock me-2"></i>
+                    <span className={!loaded ? 'placeholder col-4' : ''}>4 min read</span>
+                  </small>
+                </div>
+
+                <button className="btn btn-outline-dark btn-lg px-5 py-3 rounded-pill">
+                  {loaded ? 'Read the Story →' : <span className="placeholder col-7"></span>}
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+
+      </section>
+      <img src={wave} alt="" style={{ width: "100%" }} />
+    </>
   );
 };
 

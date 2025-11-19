@@ -1,13 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { usePlaceholder } from '../../hooks/usePlaceholder';
 import image from '../../assets/images/Hero.jpg'
 
 const Hero = () => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000); 
-    return () => clearTimeout(timer);
-  }, []);
+  const loaded = usePlaceholder();
 
   const style = {
     backgroundImage: loaded ? `url(${image})` : 'linear-gradient(90deg, #e0e0e0, #f0f0f0)',
@@ -28,19 +24,21 @@ const Hero = () => {
   };
 
   return (
-    <div className="p-5 text-center bg-image" style={style}>
-      <div className="mask">
-        <div className="d-flex justify-content-center align-items-center h-100">
-          <div className="text-white" style={heroText}>
-            <h1 className="mb-3">
-              <span className={!loaded ? 'placeholder shadow-sm' : ''}>
-                Bringing Art to everything
-              </span>
-            </h1>
+    <section>
+      <div className="p-5 text-center bg-image" style={style}>
+        <div className="mask">
+          <div className="d-flex justify-content-center align-items-center h-100">
+            <div className="text-white" style={heroText}>
+              <h1 className="mb-3">
+                <span className={!loaded ? 'placeholder shadow-sm' : ''}>
+                  Bringing Art to everything
+                </span>
+              </h1>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

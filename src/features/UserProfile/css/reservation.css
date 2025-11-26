@@ -1,0 +1,65 @@
+/* Testimonial.css & Reservation.css – Shared Cafe Theme */
+.testimonial-section,
+.reservation-section {
+  background: linear-gradient(135deg, #fff8f5 0%, #fef6f3 100%);
+  min-height: 100vh;
+}
+
+.testimonial-title {
+  color: #d45a3e;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  background: white;
+  border: 2px solid #fdf1ed;
+  border-radius: 24px;
+  transition: all 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 25px 60px rgba(212, 90, 62, 0.2) !important;
+  border-color: #d45a3e;
+}
+
+.quote-icon {
+  color: #d45a3e;
+  opacity: 0.15;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #5c4033;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d45a3e;
+}
+
+/* Reservation */
+.reservation-form-card {
+  background: white;
+  border: 2px solid #fdf1ed;
+}
+
+.reservation-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .reservation-img {
+    height: 350px;
+  }
+}

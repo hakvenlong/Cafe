@@ -4,18 +4,17 @@ const proImage =
 const products = [
   {
     id: 1,
-    image: proImage,
+    image: "https://www.cuisinart.com/dw/image/v2/ABAF_PRD/on/demandware.static/-/Sites-us-cuisinart-sfra-Library/default/dw42dcae51/images/recipe-Images/cafe-latte1-recipe_resized.jpg?sw=1200&sh=1200&sm=fit",
     proName: "Latte",
     price: "$5",
     tastingNotes: ["Hazelnut", "Vanilla", "Caramel"],
     origin: "Ethiopia",
-    region: "Southern",
-    description:
-      "A casual spot serving coffee, tea, pastries, and small snacks.",
+    region: "Southern", // Changed to "Southern"
+    description: "A casual spot serving coffee, tea, pastries, and small snacks.",
   },
   {
     id: 2,
-    image: proImage,
+    image: "https://www.allrecipes.com/thmb/chsZz0jqIHWYz39ViZR-9k_BkkE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8624835-how-to-make-a-cappuccino-beauty-4x3-0301-13d55eaad60b42058f24369c292d4ccb.jpg",
     proName: "Cappuccino",
     price: "$6",
     tastingNotes: ["Chocolate", "Nutty", "Citrus"],
@@ -24,7 +23,7 @@ const products = [
   },
   {
     id: 3,
-    image: proImage,
+    image: "https://www.sharmispassions.com/wp-content/uploads/2012/07/espresso-coffee-recipe022.jpg",
     proName: "Espresso",
     price: "$4",
     tastingNotes: ["Bitter", "Smoky", "Sweet"],
@@ -33,7 +32,7 @@ const products = [
   },
   {
     id: 4,
-    image: proImage,
+    image: "https://majestycoffee.com/cdn/shop/articles/americano_misto.jpg?v=1684064972",
     proName: "Americano",
     price: "$3",
     tastingNotes: ["Smooth", "Bold", "Clean"],
@@ -42,7 +41,7 @@ const products = [
   },
   {
     id: 5,
-    image: proImage,
+    image: "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/the_perfect_mocha_coffee_29100_16x9.jpg",
     proName: "Mocha",
     price: "$6",
     tastingNotes: ["Chocolate", "Rich", "Creamy"],
@@ -51,7 +50,7 @@ const products = [
   },
   {
     id: 6,
-    image: proImage,
+    image: "https://www.foodandwine.com/thmb/xQZv2CX6FO5331PYK7uGPF1we9Q=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Partners-Flat-White-FT-BLOG0523-b11f6273c2d84462954c2163d6a1076d.jpg",
     proName: "Flat White",
     price: "$5",
     tastingNotes: ["Velvety", "Creamy", "Nutty"],
@@ -60,7 +59,7 @@ const products = [
   },
   {
     id: 7,
-    image: proImage,
+    image: "https://emilylaurae.com/wp-content/uploads/2022/10/Caramel-macchiato-4.jpg",
     proName: "Macchiato",
     price: "$4",
     tastingNotes: ["Strong", "Sweet", "Caramel"],
@@ -69,7 +68,7 @@ const products = [
   },
   {
     id: 8,
-    image: proImage,
+    image: "https://realfood.tesco.com/media/images/Salted-caramel-Irish-coffee-1400x919-815e2b8b-098f-45fd-a32a-82d29aba1b9e-0-1400x919.jpg",
     proName: "Irish Coffee",
     price: "$7",
     tastingNotes: ["Whiskey", "Cream", "Sweet"],
@@ -78,7 +77,7 @@ const products = [
   },
   {
     id: 9,
-    image: proImage,
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw9YOhO5NhhsgYDperNllwL-Y-6T8WJapcgQ&s",
     proName: "Cortado",
     price: "$4",
     tastingNotes: ["Smooth", "Balanced", "Light"],
@@ -87,7 +86,7 @@ const products = [
   },
   {
     id: 10,
-    image: proImage,
+    image: "https://www.recipetineats.com/uploads/2023/06/Affogato_0.jpg",
     proName: "Affogato",
     price: "$8",
     tastingNotes: ["Ice Cream", "Sweet", "Bold"],
@@ -96,7 +95,7 @@ const products = [
   },
   {
     id: 11,
-    image: proImage,
+    image: "https://cdn.pickuplimes.com/cache/a0/7c/a07c3bf35435bf16965e7b9b3b63e6a6.jpg",
     proName: "Cold Brew",
     price: "$5",
     tastingNotes: ["Refreshing", "Smooth", "Light"],
@@ -105,7 +104,7 @@ const products = [
   },
   {
     id: 12,
-    image: proImage,
+    image: "https://www.halfbakedharvest.com/wp-content/uploads/2021/08/Iced-Brown-Sugar-Latte-with-Shaken-Espresso-1.jpg",
     proName: "Iced Latte",
     price: "$5",
     tastingNotes: ["Vanilla", "Chilled", "Creamy"],
@@ -114,7 +113,7 @@ const products = [
   },
   {
     id: 13,
-    image: proImage,
+    image: "https://simplyhomecooked.com/wp-content/uploads/2025/07/caramel-frappuccino-recipe-2.jpg",
     proName: "Caramel Frappe",
     price: "$6",
     tastingNotes: ["Caramel", "Ice", "Sweet"],
@@ -123,7 +122,7 @@ const products = [
   },
   {
     id: 14,
-    image: proImage,
+    image: "https://www.butteredsideupblog.com/wp-content/uploads/2024/01/Matcha-Coffee-Recipe-12-scaled.jpg",
     proName: "Matcha Latte",
     price: "$7",
     tastingNotes: ["Matcha", "Creamy", "Earthy"],
@@ -132,7 +131,7 @@ const products = [
   },
   {
     id: 15,
-    image: proImage,
+    image: "https://cdn.apartmenttherapy.info/image/upload/v1559215715/k/archive/f87c4eb3b5a5d1eeaf070a17d01d85f6adf4ba6d.jpg",
     proName: "Vanilla Sweet Cream",
     price: "$6",
     tastingNotes: ["Vanilla", "Smooth", "Sweet"],
@@ -141,7 +140,7 @@ const products = [
   },
   {
     id: 16,
-    image: proImage,
+    image: "https://foodwithfeeling.com/wp-content/uploads/2021/02/Honey-Latte-5-edited-500x500.jpg",
     proName: "Honey Oat Latte",
     price: "$6",
     tastingNotes: ["Honey", "Oat", "Smooth"],
@@ -153,7 +152,7 @@ const products = [
 // Cafe listing
 export const cafeListing = [
   {
-    id: crypto.randomUUID(),
+    id: 1,
     name: "Sunrise Coffee",
     location: "Phnom Penh",
     image:
@@ -165,7 +164,7 @@ export const cafeListing = [
     specialties: ["Latte", "Cold Brew", "Croissants"],
   },
   {
-    id: crypto.randomUUID(),
+    id: 2,
     name: "Urban Brew",
     location: "Siem Reap",
     image:
@@ -177,7 +176,7 @@ export const cafeListing = [
     specialties: ["Cappuccino", "Matcha Latte", "Bagels"],
   },
   {
-    id: crypto.randomUUID(),
+    id: 3,
     name: "Leaf & Latte",
     location: "Battambang",
     image:
@@ -189,7 +188,7 @@ export const cafeListing = [
     specialties: ["Flat White", "Espresso", "Cheesecake"],
   },
   {
-    id: crypto.randomUUID(),
+    id: 4,
     name: "Sunrise Coffee",
     location: "Koh Kong",
     image:
@@ -201,7 +200,7 @@ export const cafeListing = [
     specialties: ["Iced Latte", "Muffins", "Cold Brew"],
   },
   {
-    id: crypto.randomUUID(),
+    id: 5,
     name: "Urban Brew",
     location: "Sihanoukville",
     image:
@@ -213,7 +212,7 @@ export const cafeListing = [
     specialties: ["Americano", "Croissants", "Iced Mocha"],
   },
   {
-    id: crypto.randomUUID(),
+    id: 6,
     name: "Leaf & Latte",
     location: "Kirirom national park",
     image:

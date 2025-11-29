@@ -5,7 +5,7 @@ A beautiful, fast, and scalable coffee shop e-commerce app built with **React 18
 Live Demo: https://cafe-hakvenlong.netlify.app  
 (Deployed with Netlify — always up to date!)
 
-[![Preview](https://res.cloudinary.com/dw5olbfcj/image/upload/v1732900000/cafe-preview_ssjk2l.png)](https://cafe-hakvenlong.netlify.app)
+[![Preview](https://res.cloudinary.com/dw5olbfcj/image/upload/v1732900000/cafe-preview_ssjk2l.png)](https://cafe-bow5.vercel.app/)
 > Replace the image link above with your actual screenshot later
 
 ## ✨ Features

@@ -22,7 +22,7 @@ Live Demo: https://cafe-hakvenlong.netlify.app
 - Blazing fast with **Vite**
 
 ## Tech Stack
-
+```
 | Purpose                | Technology / Package                                      |
 |-----------------------|------------------------------------------------------------|
 | Framework             | React 18 + Vite                                            |
@@ -34,8 +34,10 @@ Live Demo: https://cafe-hakvenlong.netlify.app
 | Loading Effects       | Custom `usePlaceholder` + `LoadingSpinner`                 |
 | Routing               | React Router DOM v6                                        |
 | Scroll Behavior       | `ScrollToTop` component                                    |
+```
 
 ## Current Folder Structure (Exact Match)
+```
 src/
 ├── assets/
 ├── components/
@@ -75,6 +77,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── .env
+```
 text## Quick Start
 
 ```bash
@@ -84,6 +87,7 @@ npm install
 npm run dev
 Open → http://localhost:5173
 Key Custom Components
+```
 
 LoadingSpinner – full-screen & inline
 ScrollToTop – smooth scroll on every navigation
@@ -95,8 +99,5 @@ MDBIcon, MDBAccordion, MDBAccordionItem
 Ready for the Next Level?
 This project is built to scale fast. Just say the word and I’ll help you add:
 
-Zustand / Redux Toolkit store
-JWT authentication + protected routes
-Admin dashboard
-Stripe or PayPal payments
-Real backend (Node.js, Firebase, Supabase, etc.)
+<img width="1920" height="4227" alt="screencapture-cafe-bow5-vercel-app-2025-11-29-12_37_05" src="https://github.com/user-attachments/assets/97dc7a43-0c59-4f3b-abf9-d0251f1070f9" />
+

@@ -1,5 +1,3 @@
-/* Header.css – Beautiful & Fully Responsive */
-
 .header {
   background: #ffffff;
   border-bottom: 1px solid #eee;
@@ -151,7 +149,14 @@
 }
 
 /* Mobile Menu */
+.mobile-toggle{
+  color:white;
+  background-color: #e76f51;
+  border: 0px;
+  border-radius: 10px;
+}
 .mobile-menu {
+  color: #e76f51;
   width: 300px !important;
 }
 
@@ -190,54 +195,40 @@
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* Header.css – Z-Index Hierarchy (from low to high) */
 
 .z-header {
-  z-index: 1030; /* Bootstrap sticky header default */
+  z-index: 1000; 
 }
 
 .z-logo {
-  z-index: 1031;
+  z-index: 1000;
 }
 
 /* Badges on icons */
 .badge {
-  z-index: 10;
+  z-index: 1000;
 }
 
-/* Desktop Dropdown - above header */
 .pages-dropdown .dropdown-menu {
-  z-index: 1040 !important; /* Above sticky header */
+  z-index: 1000 !important; 
 }
 
 /* Mobile Offcanvas Menu - highest in app */
 .z-offcanvas {
-  z-index: 1055 !important; /* Above Bootstrap modals (1050) */
+  z-index: 1000 !important; 
 }
 
 .z-offcanvas-backdrop {
-  z-index: 1054 !important; /* Just below offcanvas */
+  z-index: 1000 !important; 
 }
 
-/* Optional: Extra high for future modals/toasts */
-.z-toast     { z-index: 1060; }
-.z-modal     { z-index: 1050; }
-.z-dropdown  { z-index: 1040; }
-.z-header    { z-index: 1030; }
-.z-default   { z-index: 1; }
 
 /* Shadow on scroll */
 .header.scrolled {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Optional: Add subtle scroll shadow */
-@media (prefers-reduced-motion: no-preference) {
-  .header {
-    transition: box-shadow 0.4s ease;
-  }
-}
-/* Add to your existing Navbar.css */
+
 
 /* Search Overlay */
 /* .search-overlay {
@@ -280,8 +271,3 @@
   cursor: pointer;
   padding: 10px;
 } */
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}

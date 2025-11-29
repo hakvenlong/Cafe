@@ -225,3 +225,24 @@ a:hover {
 .shadow-cafe {
   box-shadow: 0 15px 40px var(--cafe-shadow) !important;
 }
+/* Beautiful hover lift + smooth transitions */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.product-card:hover {
+  transform: translateY(-16px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15) !important;
+}
+
+.img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent 40%);
+  pointer-events: none;
+}
+
+.wishlist-btn:hover {
+  transform: scale(1.15);
+}

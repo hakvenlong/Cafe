@@ -18,7 +18,7 @@ function Header() {
   const { totalUniqueItems } = useCart();
   const { totalWishlistItems } = useWishlist();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false); // Fixed: Added missing state
+  const [showSearch, setShowSearch] = useState(false); 
 
   const handleClose = () => setShowMobileMenu(false);
   const handleShow = () => setShowMobileMenu(true);
@@ -41,13 +41,13 @@ function Header() {
     <>
       {/* Sticky Header */}
       <header className="header position-sticky top-0 z-header bg-white shadow-sm">
-        <div className="container py-3">
+        <div className="container ">
           <div className="d-flex align-items-center justify-content-between">
 
             {/* Logo */}
             <Link to="/" className="logo d-flex align-items-center text-decoration-none z-logo">
               <GrCafeteria className="logo-icon" />
-              <span className="logo-text">CafeShop</span>
+              <span className="logo-text">Cafe SNE</span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -168,7 +168,7 @@ function Header() {
             })}
 
             <li className="mobile-actions mt-5">
-              <div className="d-flex align-items-center justify-content-between mb-4 gap-4">
+              <div className="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-4">
                 <Link to="/wishlist" onClick={handleClose} className="d-flex align-items-center gap-3">
                   <div className="position-relative">
                     <MdFavoriteBorder size={26} />
@@ -191,6 +191,7 @@ function Header() {
               </Link>
             </li>
           </ul>
+          
         </Offcanvas.Body>
       </Offcanvas>
     </>

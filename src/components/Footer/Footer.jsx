@@ -1,4 +1,3 @@
-// src/components/Footer/Footer.jsx
 import { IoLogoGoogle, IoLogoGithub, IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { GrCafeteria } from "react-icons/gr";
@@ -15,7 +14,7 @@ function Footer() {
 
             {/* Left: Logo + Copyright */}
             <div className="footer-brand">
-              <Link to="/" className="footer-logo">
+              <Link to="/" className="footer-logo m-auto">
                 <GrCafeteria size={36} />
                 <span>CafeShop</span>
               </Link>

@@ -1,20 +1,13 @@
 import React from 'react';
 import { usePlaceholder } from '../../hooks/usePlaceholder';
 import blogImage from '../../assets/images/blog.png';
-import wave from '../../assets/waves.svg'
 
 const Blog = () => {
   const loaded = usePlaceholder();
 
   return (
     <>
-      <img src={wave} alt="" style={{
-        transform: 'rotate(180deg)',
-        transformOrigin: 'center',
-        display: 'block',
-        width: "100%",
-      }} />
-      <section style={{ backgroundColor: '#caf0f8' }} className="m-0">
+      <section className="m-0">
         <div className="container-fluid">
           <div className="row align-items-center justify-content-between min-vh-100 py-5 py-lg-0">
 
@@ -82,11 +75,6 @@ const Blog = () => {
         </div>
         
       </section>
-      <img src={wave} alt="" 
-      style={{
-        transformOrigin: 'center',
-        display: 'block',
-        width: "100%" }} />
 
     </>
   );

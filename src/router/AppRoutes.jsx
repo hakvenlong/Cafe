@@ -34,12 +34,12 @@ import AdminProducts from "../features/Authentication/pages/AdminProducts";
 import AdminOrders from "../features/Authentication/pages/AdminOrders";
 import AdminReservations from "../features/Authentication/pages/AdminReservations";
 import AdminSettings from "../features/Authentication/pages/AdminSettings";
+// import AdminLogin from "../features/Authentication/pages/AdminLogin";
 
 const AppRoutes = () => {
   return (
     <>
       <ScrollToTop />
-
       <Routes>
         <Route element={<PublicLayout />}>
           {/* === PUBLIC ROUTES === */}
@@ -72,6 +72,7 @@ const AppRoutes = () => {
 
         {/* === ADMIN PANEL (open for now – perfect for development) === */}
         <Route path="/admin" element={<AdminLayout />}>
+          {/* <Route path="/admin-login" element={<AdminLogin />} /> */}
           <Route index element={<Dashboard />} />
           <Route path="products" element={<AdminProducts />} />
           <Route path="orders" element={<AdminOrders />} />

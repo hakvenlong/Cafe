@@ -1,6 +1,3 @@
-const proImage =
-  "https://image.similarpng.com/file/similarpng/original-picture/2020/08/Paper-coffee-bag-on-transparent-background-PNG.png";
-
 const products = [
   {
     id: 1,
@@ -9,7 +6,7 @@ const products = [
     price: "$5",
     tastingNotes: ["Hazelnut", "Vanilla", "Caramel"],
     origin: "Ethiopia",
-    region: "Southern", // Changed to "Southern"
+    region: "Southern", 
     description: "A casual spot serving coffee, tea, pastries, and small snacks.",
   },
   {
@@ -108,7 +105,7 @@ const products = [
     proName: "Iced Latte",
     price: "$5",
     tastingNotes: ["Vanilla", "Chilled", "Creamy"],
-    origin: "Thailand",
+    origin: "Cambodia",
     region: "Eastern",
   },
   {

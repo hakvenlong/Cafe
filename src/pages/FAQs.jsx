@@ -39,7 +39,7 @@ const FAQs = () => {
                 </>
               }>
                 <p className="text-coffee-brown">
-                  Yes! We offer <strong>almond, oat, coconut, and soy milk</strong> with no extra charge. 
+                  Yes! We offer <strong>almond, oat, coconut, and soy milk</strong> with no extra charge.
                   Our vegan pastries include chocolate banana bread, matcha muffins, and coconut scones — baked fresh daily!
                 </p>
               </MDBAccordionItem>
@@ -74,7 +74,7 @@ const FAQs = () => {
                 </>
               }>
                 <p className="text-coffee-brown">
-                  Yes! We’re pet-friendly! Your furry friends are welcome in our outdoor seating area. 
+                  Yes! We’re pet-friendly! Your furry friends are welcome in our outdoor seating area.
                   We even have dog treats and water bowls ready
                 </p>
               </MDBAccordionItem>
@@ -86,7 +86,7 @@ const FAQs = () => {
                 </>
               }>
                 <p className="text-coffee-brown">
-                  We’d love to! We offer private bookings for small events (up to 25 people). 
+                  We’d love to! We offer private bookings for small events (up to 25 people).
                   Contact Samnita via Telegram or Instagram to reserve your special day
                 </p>
               </MDBAccordionItem>
@@ -98,7 +98,7 @@ const FAQs = () => {
                 </>
               }>
                 <p className="text-coffee-brown">
-                  We proudly serve <strong>100% Cambodian-grown Arabica beans</strong> from Mondulkiri and Ratanakiri provinces. 
+                  We proudly serve <strong>100% Cambodian-grown Arabica beans</strong> from Mondulkiri and Ratanakiri provinces.
                   Roasted locally with love, every cup supports Cambodian farmers
                 </p>
               </MDBAccordionItem>

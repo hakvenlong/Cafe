@@ -6,7 +6,8 @@ import toast, { Toaster } from 'react-hot-toast';
 import { useCart } from "react-use-cart";
 import { useWishlist } from "react-use-wishlist";
 import { FiHeart } from "react-icons/fi";
-import Notfound from '../../../pages/NotFound'
+import { BsCartPlus } from "react-icons/bs";
+import LoadingSpinner from '../components/Loading/LoadingSpinner'
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -18,11 +19,7 @@ const ProductDetail = () => {
 
   const product = products.find(p => String(p.id) === String(id));
 
-  if (!product) {
-    return (
-      <Notfound/>
-    );
-  }
+  if (!loaded || !product) { return (<LoadingSpinner />); }
 
   const isInWishlist = wishlistItems.some(item => item.id === product.id);
 
@@ -43,38 +40,22 @@ const ProductDetail = () => {
 
   return (
     <div className="container py-5">
-      <div className="row g-5">
+      <div className="row">
 
         {/* LEFT: Images */}
         <div className="col-lg-6">
-          <div className="sticky-top" style={{ top: '100px' }}>
-            {!loaded ? (
-              <div className="placeholder bg-light rounded" style={{ height: "600px" }}></div>
-            ) : (
-              <img
-                src={product.image}
-                alt={product.proName}
-                className="img-fluid rounded shadow-sm"
-                style={{ maxHeight: "600px", objectFit: "cover", width: "100%" }}
-              />
-            )}
 
-            {/* <div className="row g-3 mt-4">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="col-3">
-                  {!loaded ? (
-                    <div className="placeholder bg-light rounded" style={{ height: "100px" }}></div>
-                  ) : (
-                    <img
-                      src={product.image}
-                      alt={`Thumbnail ${i}`}
-                      className="img-thumbnail cursor-pointer"
-                      style={{ height: "100px", objectFit: "cover" }}
-                    />
-                  )}
-                </div>
-              ))}
-            </div> */}
+          <Link to="/products" className="btn btn-outline-secondary mb-4">
+            ← Back to Products
+          </Link>
+
+          <div className="">
+            <img
+              src={product.image}
+              alt={product.proName}
+              className="img-fluid rounded"
+              style={{ maxHeight: "600px", objectFit: "cover", width: "100%" }}
+            />
           </div>
         </div>
 
@@ -83,15 +64,6 @@ const ProductDetail = () => {
           <h1 className="display-5 fw-bold mb-3">{product.proName}</h1>
           <h3 className="text-warning fw-bold fs-2 mb-4">{product.price}</h3>
 
-          <div className="d-flex align-items-center mb-4">
-            <div className="text-warning me-2">
-              {[...Array(4)].map((_, i) => (
-                <i key={i} className="fas fa-star"></i>
-              ))}
-              <i className="fas fa-star-half-alt"></i>
-            </div>
-            <span className="text-muted">(128 reviews)</span>
-          </div>
 
           <div className="mb-4">
             <h5><strong>Origin:</strong> {product.origin}</h5>
@@ -111,20 +83,26 @@ const ProductDetail = () => {
               className="btn btn-warning btn-lg px-5 fw-bold"
               onClick={handleAddToCart}
             >
-              Add to Cart
+              <BsCartPlus
+                size={22}
+                fill='white'
+                stroke='red'
+              />
+              <span className="ms-2 text-white">Add to card</span>
             </button>
             <button
               onClick={toggleWishlist}
-              className={`btn btn-lg px-5 d-flex align-items-center gap-2 fw-medium ${
-                isInWishlist ? 'btn-danger' : 'btn-outline-danger'
-              }`}
+              className={`btn btn-lg px-5 align-items-center gap-2 fw-medium ${isInWishlist ? 'btn-danger' : 'btn-outline-danger'
+                }`}
             >
               <FiHeart
                 size={22}
                 fill={isInWishlist ? 'white' : 'none'}
                 stroke={isInWishlist ? 'white' : 'red'}
               />
-              {isInWishlist ? 'In Wishlist' : 'Add to Favorites'}
+              <span className="ms-2">
+                {isInWishlist ? 'In Wishlist' : 'Add to Favorites'}
+              </span>
             </button>
           </div>
 
@@ -134,14 +112,22 @@ const ProductDetail = () => {
             <i className="fas fa-truck me-2"></i>
             Free shipping use the promocode "你很可爱"
           </div>
-
-          <Link to="/products" className="btn btn-outline-secondary mt-4">
-            ← Back to Products
-          </Link>
         </div>
       </div>
 
-      <Toaster position="top-right" />
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: '#fff',
+            color: '#333',
+            boxShadow: '0 10px 30px rgba(212, 90, 62, 0.2)',
+            borderRadius: '16px',
+            padding: '16px',
+          },
+        }}
+      />
     </div>
   );
 };

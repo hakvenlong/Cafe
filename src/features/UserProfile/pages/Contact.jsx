@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { IoLogoGoogle, IoLogoFacebook, IoLogoInstagram } from "react-icons/io5";
 import toast, { Toaster } from 'react-hot-toast'
 import emailjs from '@emailjs/browser';
 import { usePlaceholder } from '../../../hooks/usePlaceholder';
@@ -80,8 +81,8 @@ const Contact = () => {
         <div className="row justify-content-center mb-5">
           <div className="col-12">
             <div className="map-container rounded overflow-hidden shadow-lg">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d584.705292147838!2d104.89480649013795!3d11.567967498737799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095173761d4a53%3A0xcd09ff2f4d326e3f!2sSETEC%20Institute!5e0!3m2!1sen!2skh!4v1755776714215!5m2!1sen!2skh"
+              <iframe                
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31270.033689552136!2d104.87694716180302!3d11.569469766270549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951725d8c4835%3A0x2047e2df9364f385!2sToul%20Kork%20District%2C%20Phnom%20Penh!5e0!3m2!1sen!2skh!4v1764214162058!5m2!1sen!2skh"
                 width="100%"
                 height="450"
                 style={{ border: 0 }}
@@ -214,30 +215,29 @@ const Contact = () => {
                 <li className="d-flex align-items-start mb-3">
                   <i className="bi bi-geo-alt-fill me-3 icon"></i>
                   <p className="mb-0">
-                    SMOS store No. 86A, Street 110,<br />
-                    Russian Federation Blvd (110), Phnom Penh
+                    Warm coffee, cozy moments, your daily escape
                   </p>
                 </li>
                 <li className="d-flex align-items-center mb-3">
                   <i className="bi bi-telephone-fill me-3 icon"></i>
-                  <p className="mb-0">+855 123 456 789</p>
+                  <p className="mb-0">Phone Number +855 123 456 789</p>
                 </li>
                 <li className="d-flex align-items-center mb-3">
                   <i className="bi bi-envelope-fill me-3 icon"></i>
-                  <p className="mb-0">info@smosstore.com</p>
+                  <p className="mb-0">Email : shop@cafesne.com</p>
                 </li>
               </ul>
-
+                
               <h5 className="fw-bold mb-4 info-title">Follow Us</h5>
               <div className="d-flex gap-4 social-icons">
-                <a href="https://web.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <i className="bi bi-facebook fs-3"></i>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <IoLogoFacebook />
                 </a>
-                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <i className="bi bi-twitter fs-3"></i>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <IoLogoInstagram />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <i className="bi bi-instagram fs-3"></i>
+                <a href="https://google.com" target="_blank" rel="noopener noreferrer" aria-label="Google">
+                  <IoLogoGoogle />
                 </a>
               </div>
             </div>

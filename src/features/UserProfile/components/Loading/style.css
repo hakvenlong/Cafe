@@ -1,0 +1,91 @@
+.loading-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #fff8f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px);
+}
+
+.mosaic-loader {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.mosaic-item {
+  background: #d45a3e;
+  border-radius: 8px;
+  animation: mosaic 1.5s infinite ease-in-out;
+}
+
+.mosaic-item:nth-child(1) { animation-delay: 0s; }
+.mosaic-item:nth-child(2) { animation-delay: 0.1s; }
+.mosaic-item:nth-child(3) { animation-delay: 0.2s; }
+.mosaic-item:nth-child(4) { animation-delay: 0.3s; }
+.mosaic-item:nth-child(5) { animation-delay: 0.4s; }
+.mosaic-item:nth-child(6) { animation-delay: 0.5s; }
+.mosaic-item:nth-child(7) { animation-delay: 0.6s; }
+.mosaic-item:nth-child(8) { animation-delay: 0.7s; }
+.mosaic-item:nth-child(9) { animation-delay: 0.8s; }
+
+.loading-text {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #3a1e1e;
+  letter-spacing: 6px;
+  white-space: nowrap;
+}
+
+.loading-text span {
+  display: inline-block;
+  animation: bounce 1.5s infinite;
+}
+
+.loading-text span:nth-child(1) { animation-delay: 0s; }
+.loading-text span:nth-child(2) { animation-delay: 0.1s; }
+.loading-text span:nth-child(3) { animation-delay: 0.2s; }
+.loading-text span:nth-child(4) { animation-delay: 0.3s; }
+.loading-text span:nth-child(5) { animation-delay: 0.4s; }
+.loading-text span:nth-child(6) { animation-delay: 0.5s; }
+.loading-text span:nth-child(7) { animation-delay: 0.6s; }
+
+/* Animations */
+@keyframes mosaic {
+  0%, 100% { transform: scale(0.8); opacity: 0.6; }
+  50% { transform: scale(1.2); opacity: 1; background: #e76f51; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .mosaic-loader {
+    width: 100px;
+    height: 100px;
+  }
+  .loading-text {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+}

@@ -1,9 +1,8 @@
 import { usePlaceholder } from '../../../hooks/usePlaceholder';
 import { FaQuoteLeft, FaStar } from "react-icons/fa";
-// import './Testimonial.css';
 
 const Testimonial = () => {
-  const loaded = usePlaceholder(1200);
+  const loaded = usePlaceholder();
 
   const testimonials = [
     { name: "Sopheak", role: "Coffee Lover", rating: 5, text: "The best latte in town! Cozy atmosphere and super friendly staff. My daily go-to cafe!", image: "https://randomuser.me/api/portraits/women/44.jpg" },

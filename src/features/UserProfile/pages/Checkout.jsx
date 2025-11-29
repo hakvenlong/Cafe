@@ -1,10 +1,9 @@
-// src/components/Checkout.jsx
 import React, { useState, useEffect } from 'react';
 import { usePlaceholder } from '../../../hooks/usePlaceholder';
 import { MdDelete } from "react-icons/md";
 import { useCart } from "react-use-cart";
 import { Link } from 'react-router-dom';
-import '../css/checkout.css'; // ← Clean & minimal style
+import '../css/checkout.css';
 
 const Checkout = () => {
   const loaded = usePlaceholder(1200);
@@ -31,7 +30,6 @@ const Checkout = () => {
   const deleteSelected = () => {
     // Object.keys(selectedItems).forEach(id => selectedItems[id] && removeItem(id));
     // setSelectedItems({});
-    
   };
 
   const parsePrice = (p) => typeof p === 'number' ? p : parseFloat(String(p).replace(/[^0-9.-]/g, '')) || 0;
@@ -51,7 +49,7 @@ const Checkout = () => {
 
   if (isEmpty) {
     return (
-      <div className="empty-cart text-center py-5">
+      <div className="empty-cart text-center py-5 align-content-center" style={{ height: '50vh' }}>
         <MdDelete size={80} className="text-muted mb-4" />
         <h3>Your cart is empty</h3>
         <p className="text-muted">Add some delicious items first!</p>
@@ -63,19 +61,19 @@ const Checkout = () => {
   return (
     <div className="checkout-page py-5">
       <div className="container">
-        <div className="row g-5">
+        <div className="row">
 
           {/* Cart Items */}
           <div className="col-lg-8">
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h2 className="m-0">Shopping Cart ({totalUniqueItems})</h2>
               {loaded && items.length > 0 && (
-                <div className="d-flex gap-3 align-items-center">
+                <div className="d-flex flex-wrap gap-3 align-items-center">
                   <label className="checkbox-label">
                     <input type="checkbox" checked={allSelected} onChange={toggleSelectAll} />
                     Select All ({selectedCount})
                   </label>
-                  <button onClick={deleteSelected} className="btn-delete-sm">
+                  <button onClick={deleteSelected} className="btn-delete-sm text-black ">
                     <MdDelete /> Delete
                   </button>
                 </div>
@@ -85,49 +83,48 @@ const Checkout = () => {
             <div className="cart-items">
               {(loaded ? items : [...Array(4)]).map((item, i) => (
                 <div key={item?.id || i} className="cart-row">
-                  {/* Checkbox */}
-                  <div className="check">
-                    {loaded ? (
-                      <input type="checkbox" checked={!!selectedItems[item?.id]} onChange={() => toggleItem(item.id)} />
-                    ) : <div className="skeleton-circle"></div>}
-                  </div>
 
-                  {/* Image */}
-                  <div className="img">
-                    {loaded ? <img src={item.image} alt={item.proName} /> : <div className="skeleton-img"></div>}
-                  </div>
+                  <div className="d-flex align-items-center">
+                    {/* Checkbox */}
+                    <div className="check">
+                      {loaded ? (
+                        <input type="checkbox" checked={!!selectedItems[item?.id]} onChange={() => toggleItem(item.id)} />
+                      ) : <div className="skeleton-circle"></div>}
+                    </div>
+                    {/* Image */}
+                    <div className="img m-auto d-flex flex-wrap justify-content-center align-items-center ">
+                      {loaded ? <img src={item.image} alt={item.proName} /> : <div className="skeleton-img"></div>}
+                    </div>
 
-                  {/* Info */}
-                  <div className="info flex-grow-1">
-                    <h6>{loaded ? item.proName : <div className="skeleton-text long"></div>}</h6>
-                    <small className="text-cafe">
-                      {loaded ? `$${parsePrice(item.price).toFixed(2)} each` : <div className="skeleton-text"></div>}
-                    </small>
-                  </div>
+                    {/* Info */}
+                    <div className="info flex-grow-1 ms-md-5">
+                      <h6>{loaded ? item.proName : <div className="skeleton-text long"></div>}</h6>
+                      <small className="text-cafe">
+                        {loaded ? `$${parsePrice(item.price).toFixed(2)} each` : <div className="skeleton-text"></div>}
+                      </small>
+                    </div>
+                    {/* Quantity */}
+                    <div className="qty">
+                      {loaded ? (
+                        <div className="qty-box m-auto d-flex justify-content-evenly align-items-center w-auto">
+                          <button onClick={() => item.quantity > 1 && updateItemQuantity(item.id, item.quantity - 1)}>−</button>
+                          <span>{item.quantity}</span>
+                          <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
+                        </div>
+                      ) : <div className="skeleton-qty"></div>}
+                    </div>
+                    {/* Price */}
+                    <div className="price text-cafe">
+                      {loaded ? `$${(parsePrice(item.price) * item.quantity).toFixed(2)}` : <div className="skeleton-text"></div>}
+                    </div>
 
-                  {/* Quantity */}
-                  <div className="qty">
-                    {loaded ? (
-                      <div className="qty-box">
-                        <button onClick={() => item.quantity > 1 && updateItemQuantity(item.id, item.quantity - 1)}>−</button>
-                        <span>{item.quantity}</span>
-                        <button onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
-                      </div>
-                    ) : <div className="skeleton-qty"></div>}
-                  </div>
-
-                  {/* Price */}
-                  <div className="price text-cafe">
-                    {loaded ? `$${(parsePrice(item.price) * item.quantity).toFixed(2)}` : <div className="skeleton-text"></div>}
-                  </div>
-
-                  {/* Delete */}
-                  <div className="del">
-                    {loaded ? (
+                    {/* Delete */}
+                    <div className="del ms-3 bg-danger px-2 rounded-circle">
                       <button onClick={() => removeItem(item.id)} className="btn-del">
                         <MdDelete />
                       </button>
-                    ) : <div className="skeleton-circle"></div>}
+                    </div>
+
                   </div>
                 </div>
               ))}
@@ -141,7 +138,7 @@ const Checkout = () => {
 
           {/* Summary */}
           <div className="col-lg-4">
-            <form onSubmit={handleSubmit} className="summary-card sticky-top">
+            <form onSubmit={handleSubmit} className="summary-card">
               <h4>Order Summary</h4>
 
               <div className="payment-methods">

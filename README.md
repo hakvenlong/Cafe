@@ -1,185 +1,102 @@
-☕ Coffee Shop React App
-A React project built with a clean, modular structure using features-based folders.
-Everything is split into auth, products, cart, reusable components, hooks, pages, and layouts — easy to scale, easy to maintain.
+Markdown# ☕ Cafe – Modern Coffee Shop React App
 
-🚀 Features
+A beautiful, fast, and scalable coffee shop e-commerce app built with **React 18 + Vite**, featuring authentication, cart, wishlist, smooth animations, and a clean feature-first architecture.
 
+Live Demo: https://cafe-hakvenlong.netlify.app  
+(Deployed with Netlify — always up to date!)
 
-Smooth skeleton loading animations
+[![Preview](https://res.cloudinary.com/dw5olbfcj/image/upload/v1732900000/cafe-preview_ssjk2l.png)](https://cafe-hakvenlong.netlify.app)
+> Replace the image link above with your actual screenshot later
 
+## ✨ Features
 
-Reusable UI components
+- Full user authentication (Login / Register / Profile)
+- Shopping cart with `react-use-cart` (persisted in localStorage)
+- Wishlist with heart toggle (`react-use-wishlist`)
+- Instant feedback with **react-toastify** (success, error, info toasts)
+- Smooth loading states: **Skeleton + Shimmer** via `usePlaceholder` hook
+- Custom reusable `LoadingSpinner` (inline & full-screen)
+- Auto scroll to top on route change (`ScrollToTop` component)
+- Responsive navbar, footer, modals, and UI components
+- Font Awesome icons + MDBootstrap React styling
+- Blazing fast with **Vite**
 
+## Tech Stack
 
-Organized by features (auth, cart, products)
+| Purpose                | Technology / Package                                      |
+|-----------------------|------------------------------------------------------------|
+| Framework             | React 18 + Vite                                            |
+| UI Library            | MDBootstrap React (`mdb-react-ui-kit                     |
+| Icons                 | @fortawesome/fontawesome-free                              |
+| Toast Notifications   | react-toastify                                             |
+| Cart                  | react-use-cart                                             |
+| Wishlist              | react-use-wishlist                                         |
+| Loading Effects       | Custom `usePlaceholder` + `LoadingSpinner`                 |
+| Routing               | React Router DOM v6                                        |
+| Scroll Behavior       | `ScrollToTop` component                                    |
 
-
-Custom hooks (useFetch)
-
-
-React Router setup with clean layouts
-
-
-Local state/store structured for growth
-
-
-Easy to plug into any backend API
-
-
-```
-📁 Folder Structure (explained)
+## Current Folder Structure (Exact Match)
 src/
-│
 ├── assets/
-│   ├── icons/        # SVGs & icons
-│   └── images/       # Images for UI
-│
-├── components/       # Reusable UI pieces (buttons, cards, navbars)
-│
+├── components/
+│   ├── Footer/
+│   ├── Modal/
+│   ├── Navbar/
+│   └── ui/            
+├── data/               
 ├── features/
-│   ├── auth/         # Login, register, user-related logic
-│   ├── cart/         # Cart state, reducers, UI
-│   └── products/     # Product list, single product UI, API calls
-│
-├── hooks/
-│   └── useFetch.js   # Custom fetch hook for API requests
-│
-├── layouts/
-│   └── MainLayout.jsx # Shared layout wrapper (navbar, footer)
-│
-├── pages/
-│   ├── Home/         # Homepage
-│   └── Login/        # Login page
-│
+│   └── Authentication/  
+│       ├── UserProfile/
+│       ├── components/
+│       ├── css/
+│       ├── hooks/
+│       ├── layout/
+│       ├── pages/
+│       └── services/
+│   └── UserProfile/   
+│       ├── components/
+│       ├── css/
+│       ├── hooks/
+│       ├── layout/
+│       ├── pages/
+│       └── services/
+├── hooks/             
+├── pages/             
+│   ├── About.jsx
+│   ├── FAQs.jsx
+│   ├── Home.jsx
+│   ├── NotFound.jsx
+│   └── Policy.jsx
 ├── router/
-│   └── AppRoutes.jsx # All app routes handled here
-│
-├── services/         # API helpers (auth services, product services)
-│
-├── store/            # Global state mgmt (context, redux, zustand)
-│
-├── styles/           # Global CSS, variables, theme styles
-│
-├── utils/            # Helper functions (formatters, validators)
-│
-├── App.jsx           # Root component
-└── main.jsx          # App entry point
-```
+│   └── AppRoutes.jsx    
+├── services/        
+├── styles/             
+├── utils/             
+├── App.jsx
+├── main.jsx
+└── .env
+text## Quick Start
 
-
-🛠 Installation
-Clone it:
-```
+```bash
 git clone https://github.com/hakvenlong/Cafe.git
-```
-
-Install:
-```
+cd Cafe
 npm install
-```
-
-Run dev server:
-```
 npm run dev
-```
+Open → http://localhost:5173
+Key Custom Components
 
-🧩 Routing
-All routes live inside:
-src/router/AppRoutes.jsx
+LoadingSpinner – full-screen & inline
+ScrollToTop – smooth scroll on every navigation
+ToastContainer – beautifully styled react-toastify
+usePlaceholder – shimmer placeholder effect
+All MDB components used:JavaScriptMDBCol, MDBContainer, MDBRow, MDBTypography,
+MDBIcon, MDBAccordion, MDBAccordionItem
 
-Example:
-```
-{
-  path: '/',
-  element: <MainLayout />,
-  children: [
-    { path: '', element: <Home /> },
-    { path: 'login', element: <Login /> }
-  ]
-}
-```
+Ready for the Next Level?
+This project is built to scale fast. Just say the word and I’ll help you add:
 
-
-🎨 UI & Styling
-
-
-Bootstrap / Tailwind (your choice)
-
-
-Custom placeholders for loading animations
-
-
-Clean layout with MainLayout.jsx
-
-
-Plug it into any feature.
-
-🛍 Features Breakdown
-Auth
-Handles:
-
-
-User login
-
-
-Auth services
-
-
-Form validation
-
-
-Products
-Handles:
-
-
-Fetching products
-
-
-Product card UI
-
-
-Product details
-
-
-Skeleton while loading
-
-
-Cart
-Handles:
-
-
-Add to cart
-
-
-Local/global cart state
-
-
-Cart UI
-
-
-
-🌱 Want to scale this project?
-I can help you add:
-
-
-Redux / Zustand store
-
-
-JWT authentication
-
-
-Protected routes
-
-
-Full API backend (Node, Flask, or Django)
-
-
-Payment integration
-
-
+Zustand / Redux Toolkit store
+JWT authentication + protected routes
 Admin dashboard
-
-
-Just tell me what you want next.
-
-If you want this README in a more formal tone or want badges, screenshots, or installation steps for deployment, I can rewrite it anytime.
+Stripe or PayPal payments
+Real backend (Node.js, Firebase, Supabase, etc.)
